@@ -1,0 +1,15 @@
+---
+- name: Create folder for mount.
+  ansible.builtin.file:
+    path: "{{ src_data_folder }}"
+    state: directory
+    mode: 0755
+
+
+- name: Mount nfs volume.
+  ansible.posix.mount:
+    src: "{{ server_ip }}:{{ exports_folder }}/{{ data_folder_name }}"
+    path: "{{ src_data_folder }}"
+    opts: nfsvers=4,rw,sync
+    state: mounted
+    fstype: nfs
