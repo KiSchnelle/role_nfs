@@ -19,6 +19,7 @@
     src: "{{ src_data_folder }}"
     opts: bind
     state: mounted
+    fstype: "{{ src_filesystem_type }}"
 
 
 - name: Copy exports file.
