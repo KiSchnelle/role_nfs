@@ -4,8 +4,8 @@ nfs_server: false
 server_ip: 192.168.124.1
 ip_range: 192.168.124.0/22
 exports_folder: /exports/nfsv4
-data_folder_name: data
-src_data_folder: /data
+data_folder_name: sbdata
+src_data_folder: /sbdata
 src_filesystem_type: ext4
 exports_folder_perm: rw,sync,root_squash,no_subtree_check,crossmnt,fsid=0
 data_folder_perm: rw,sync,root_squash,no_subtree_check
