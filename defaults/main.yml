@@ -1,8 +1,8 @@
 ---
 # defaults file for role_nfs
-# nfs_server: true
-# server_ip:
-# ip_range:
+nfs_server: false
+server_ip: 192.168.124.1
+ip_range: 192.168.124.0/22
 exports_folder: /exports/nfsv4
 data_folder_name: data
 src_data_folder: /data

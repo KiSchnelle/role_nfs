@@ -1,5 +1,5 @@
 ---
-- name: Create /exports/nfsv4 folder.
+- name: Create exports folder.
   ansible.builtin.file:
     path: "{{ exports_folder }}"
     state: directory

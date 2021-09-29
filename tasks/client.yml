@@ -8,7 +8,7 @@
 
 - name: Mount nfs volume.
   ansible.posix.mount:
-    src: "{{ server_ip }}:{{ exports_folder }}/{{ data_folder_name }}"
+    src: "{{ server_ip | string }}:{{ exports_folder }}/{{ data_folder_name }}"
     path: "{{ src_data_folder }}"
     opts: nfsvers=4,rw,sync
     state: mounted
