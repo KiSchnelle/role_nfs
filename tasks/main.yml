@@ -2,18 +2,16 @@
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yml"
 
+# TODO check for server install if exports_folder is defined
 
 - include_tasks: debian.yml
   when: ansible_os_family == 'Debian'
 
-
 - include_tasks: redhat.yml
   when: ansible_os_family == 'RedHat'
 
-
 - include_tasks: server.yml
   when: nfs_server
-
 
 - include_tasks: client.yml
   when: not nfs_server

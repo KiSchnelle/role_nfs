@@ -5,13 +5,11 @@
     state: directory
     mode: 0755
 
-
 - name: Create exports data folder.
   ansible.builtin.file:
     path: "{{ exports_folder }}/{{ data_folder_name }}"
     state: directory
     mode: 0755
-
 
 - name: Mount and bind data folder. Also configures fstab
   ansible.posix.mount:
@@ -21,7 +19,6 @@
     state: mounted
     fstype: "{{ src_filesystem_type }}"
 
-
 - name: Copy exports file.
   ansible.builtin.template:
     src: etc/exports.j2
@@ -29,7 +26,6 @@
     owner: root
     group: root
     mode: 0644
-
 
 - name: Start and enable nfs service with reloaded config.
   ansible.builtin.systemd:
